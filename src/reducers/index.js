@@ -1,7 +1,13 @@
-import { FETCH_START, FETCH_SUCCESS, FETCH_ERROR, ADD_SMURF, SET_ERROR } from "../actions";
+import {
+  FETCH_START,
+  FETCH_SUCCESS,
+  FETCH_ERROR,
+  ADD_SMURF,
+  SET_ERROR,
+} from "../actions";
 
 export const initialState = {
-  smurfs: [{id:"", name:"",position:"",nickname:"", description:""}],
+  smurfs: [{ id: "", name: "", position: "", nickname: "", description: "" }],
   isFetching: false,
   error: "",
 };
@@ -9,36 +15,45 @@ export const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_START:
-      return ({
-          ...state,
-          smurfs: {},
-          isFetching: true,
-          error: ""
-      });
+      return {
+        ...state,
+        smurfs: {},
+        isFetching: true,
+        error: "",
+      };
     case FETCH_SUCCESS:
-      return ({
+      return {
         ...state,
         smurfs: action.payload,
         isFetching: false,
-        error: ""
-      });
+        error: "",
+      };
     case FETCH_ERROR:
-      return ({
+      return {
         ...state,
         smurfs: {},
         isFetching: false,
-        error: action.payload
-      });
+        error: action.payload,
+      };
     case ADD_SMURF:
-      return ({
-          ...state,
-          smurfs: [...state.smurfs, action.payload]
-      });
+      return {
+        ...state,
+        smurfs: [
+          ...state.smurfs,
+          {
+            id: Date.now(),
+            name: action.payload.name,
+            position: action.payload.position,
+            nickname: action.payload.nickname,
+            description: action.payload.description,
+          },
+        ],
+      };
     case SET_ERROR:
-      return ({
-          ...state,
-          error: action.payload //review this
-      });
+      return {
+        ...state,
+        error: action.payload, //review this
+      };
     default:
       return state;
   }
