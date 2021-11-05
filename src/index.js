@@ -22,8 +22,3 @@ ReactDOM.render(
   </Provider>,
   rootElement
 );
-
-//Task List:
-//1. Add in all necessary components and library methods.
-//2. Create a store that includes thunk and logger middleware support.
-//3. Wrap the App component in a react-redux Provider element.
