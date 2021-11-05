@@ -9,9 +9,9 @@ export const addSmurf = (smurf) => {
   return { type: ADD_SMURF, payload: smurf };
 };
 
-export const ERROR_VALUE = "ERROR_VALUE";
-export const errorValue = (err) => {
-  return { type: ERROR_VALUE, payload: err };
+export const SET_ERROR = "SET_ERROR";
+export const setError = (err) => {
+  return { type: SET_ERROR, payload: err };
 };
 
 export const fetchSmurfs = () => {
@@ -20,8 +20,7 @@ export const fetchSmurfs = () => {
     axios
       .get("http://localhost:3333/smurfs")
       .then((resp) => {
-          dispatch({type: FETCH_SUCCESS, payload: resp.data})
-        console.log("fetch smurfs resp", resp.data);
+        dispatch({ type: FETCH_SUCCESS, payload: resp.data });
       })
       .catch((err) => {
         dispatch({ type: FETCH_ERROR, payload: err });

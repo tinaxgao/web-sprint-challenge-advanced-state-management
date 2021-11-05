@@ -1,4 +1,4 @@
-import { FETCH_START, FETCH_SUCCESS, FETCH_ERROR, ADD_SMURF, ERROR_VALUE } from "../actions";
+import { FETCH_START, FETCH_SUCCESS, FETCH_ERROR, ADD_SMURF, SET_ERROR } from "../actions";
 
 export const initialState = {
   smurfs: [{id:"", name:"",position:"",nickname:"", description:""}],
@@ -34,7 +34,7 @@ const reducer = (state = initialState, action) => {
           ...state,
           smurfs: [...state.smurfs, action.payload]
       });
-    case ERROR_VALUE:
+    case SET_ERROR:
       return ({
           ...state,
           error: action.payload //review this
