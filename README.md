@@ -84,10 +84,10 @@ In this project, you will build the reducer, actions and basic redux connects ne
 ### Complete components/AddForm.js
   Connect this component to the error state slice, setError and addSmurf actions. Complete the form handling code.
 
-  * [ ] Connect your error state slice, setError and addSmurf actions to the AddForm component.
-  * [ ] Replace all instances of the errorMessage static variable with your error message state slice. 
-  * [ ] Within the handleSubmit function, replace the static assignment to errorMessage with a call to the setError action. Test that an error is displayed when validation code fails.
-  * [ ] Within the handleSubmit function, call your addSmurf action with the smurf name, position, nickname and summury passed as arguments. Test that a smurf is correctly added to when the form is submitted.
+  * [x] Connect your error state slice, setError and addSmurf actions to the AddForm component.
+  * [x] Replace all instances of the errorMessage static variable with your error message state slice. 
+  * [x] Within the handleSubmit function, replace the static assignment to errorMessage with a call to the setError action. Test that an error is displayed when validation code fails.
+  * [x] Within the handleSubmit function, call your addSmurf action with the smurf name, position, nickname and summury passed as arguments. Test that a smurf is correctly added to when the form is submitted.
 
 ## Important Notes:
 
@@ -99,10 +99,10 @@ In this project, you will build the reducer, actions and basic redux connects ne
 * Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work.
 
 ## Submission format
-* [ ] Submit via Codegrade by commiting and pushing any new changes to **your main branch.**
-* [ ] Check Codegrade before the deadline to compare its results against your local tests.
-* [ ] Check Codegrade on the days following the Sprint Challenge for reviewer feedback. For more information on how to access and read your feedback, check [here](https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a)
-* [ ] New commits will be evaluated by Codegrade if pushed before the sprint challenge deadline.
+* [x] Submit via Codegrade by commiting and pushing any new changes to **your main branch.**
+* [x] Check Codegrade before the deadline to compare its results against your local tests.
+* [x] Check Codegrade on the days following the Sprint Challenge for reviewer feedback. For more information on how to access and read your feedback, check [here](https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a)
+* [x] New commits will be evaluated by Codegrade if pushed before the sprint challenge deadline.
 
 ## Interview Questions
 
@@ -110,8 +110,16 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What problem does the context API help solve?
 
+> Context API is a way to share state across an app or components that's simpler to set up than Redux.
+
 2. In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+> Actions are JS objects which list the possible ways to change state. Reducers hold the instructions for how to do each action. The functions inside the reducer executes depending on the action selected. The store is an object which holds the state of the app. It's known as the "single source of truth" because the state for the entire app is stored in one object tree, from which you can inject into components.
 
 3. What does `redux-thunk` allow us to do? How does it change our `action-creators`?
 
+> Using thunks allows us to delay the execution of a function until it is called using a 'thunk', or a function that runs another function. In terms of redux, it allows actions defined in one part of the app to be 'saved' & used whenever it is called in other parts of the app.
+
 4. What is your favorite state management system you've learned and this sprint? Please explain why!
+
+> Context API is my favorite since the process is simple and easy to remember!
